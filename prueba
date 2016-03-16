@@ -1,0 +1,125 @@
+{
+	"id": "1f75abbb-69d4-3452-6459-543eeb0d64c3",
+	"name": "Tarea 1",
+	"description": "",
+	"order": [
+		"1a902954-1302-fca4-4bb2-ef2f8f6ee576",
+		"15b37780-622f-e244-c6a4-cd8115414077",
+		"4e6644f6-a74a-8260-7346-9e56efe18d0b",
+		"fad66c1b-a5ca-bc20-235c-bbaeab4cb313"
+	],
+	"folders": [],
+	"timestamp": 1458058382010,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "15b37780-622f-e244-c6a4-cd8115414077",
+			"headers": "",
+			"url": "{{url}}/validarFirma",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "mensaje",
+					"value": "Brasil investigue vínculo de ME-O con constructora brasileña OAS La comisión de Relaciones Exteriores solicitará al canciller Heraldo Muñoz que se indague el uso del jet privado en la campaña presidencial del líder del PRO y \"el interés de la compañía\" en Chile.",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "hash",
+					"value": "9FFD56E33B6D10AE6EDCFDD76A49EC8BF37549F09177F3C4414A6E1ECFD5D3CC",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar jsonData = {};\n\ntry {\n    jsonData = JSON.parse(responseBody);\n} catch(e) {}\n\ntests[\"Resultado es Falso\"] = jsonData.valido === false;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458078959592,
+			"name": "Validar Firma Incorrecta",
+			"description": "",
+			"collectionId": "1f75abbb-69d4-3452-6459-543eeb0d64c3",
+			"responses": []
+		},
+		{
+			"id": "1a902954-1302-fca4-4bb2-ef2f8f6ee576",
+			"headers": "",
+			"url": "{{ur}}l/validarFirma",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "mensaje",
+					"value": "El director general de la compañía Qatar Airways, Akbar al Baker, anunció hoy que van a lanzar el próximo año un vuelo directo entre Doha y Santiago de Chile, que será el de mayor duración del mundo con una distancia de 14.413 kilómetros.",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "hash",
+					"value": "B6708476815AF95E77AFC37570BE368BA59B907DB5CFD032F93602CCC783B60F",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar jsonData = {};\n\ntry {\n    jsonData = JSON.parse(responseBody);\n} catch(e) {}\n\ntests[\"Resultado es True\"] = jsonData.valido === true;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458079410743,
+			"name": "Validar Firma Correcta",
+			"description": "",
+			"collectionId": "1f75abbb-69d4-3452-6459-543eeb0d64c3",
+			"responses": []
+		},
+		{
+			"id": "4e6644f6-a74a-8260-7346-9e56efe18d0b",
+			"headers": "",
+			"url": "{{url}}/validarFirma",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "mensaje",
+					"value": "El director general de la compañía Qatar Airways, Akbar al Baker, anunció hoy que van a lanzar el próximo año un vuelo directo entre Doha y Santiago de Chile, que será el de mayor duración del mundo con una distancia de 14.413 kilómetros.",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code es 400\"] = responseCode.code === 400;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458079421112,
+			"name": "Validar Firma Parámetros incorrectos",
+			"description": "",
+			"collectionId": "1f75abbb-69d4-3452-6459-543eeb0d64c3",
+			"responses": []
+		},
+		{
+			"id": "fad66c1b-a5ca-bc20-235c-bbaeab4cb313",
+			"headers": "",
+			"url": "{{url}}/status",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code es 201\"] = responseCode.code === 201;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458079427083,
+			"name": "Status",
+			"description": "",
+			"collectionId": "1f75abbb-69d4-3452-6459-543eeb0d64c3",
+			"responses": []
+		}
+	]
+}
